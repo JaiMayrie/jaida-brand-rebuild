@@ -500,3 +500,63 @@ h1 em { color: #865c50; font-weight: 400; }
   .process-detail h3 { font-size: 24px; }
   .process-step-jaida h3 { font-size: 28px; }
 }
+
+
+/* Prevent grid children and their images from forcing a column wider than its space. */
+.build-copy, .build-visual, .content-system li, .pin-placeholder { min-width: 0; }
+.content-system li .build-image { max-width: 100%; }
+
+/* The closing section uses a blush panel, generous space, and a larger serif heading. */
+.takeaway {
+  width: min(1180px, calc(100% - 96px));
+  margin-inline: auto;
+  padding: 80px 48px;
+  border-block: 1px solid var(--gold);
+  background: var(--blush);
+  text-align: center;
+}
+.takeaway h2 {
+  max-width: 950px;
+  margin: 0 auto;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(34px, 4.5vw, 60px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+}
+.takeaway h2 em { font-weight: 400; }
+.takeaway-copy { max-width: 690px; margin: 32px auto 0; }
+.takeaway-copy p { margin: 0; color: var(--espresso); font-size: 15px; line-height: 1.8; }
+.takeaway-copy p + p { margin-top: 20px; }
+
+/* Fine gold rules give the featured statement its own visual emphasis. */
+.takeaway-statement {
+  max-width: 760px;
+  margin: 40px auto 0;
+  padding-block: 28px;
+  border-block: 1px solid var(--gold);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(25px, 3vw, 34px);
+  line-height: 1.4;
+}
+.takeaway-signoff { margin-top: 40px; }
+.takeaway-brand { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 16px; margin: 0 0 12px; }
+.takeaway-signoff .tagline { color: var(--espresso); }
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: min(1180px, calc(100% - 96px));
+  margin-inline: auto;
+  padding-block: 32px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.6;
+}
+.site-footer p { margin: 0; }
+
+/* Smaller screens keep the closing panel spacious with narrower padding. */
+@media (max-width: 800px) {
+  .takeaway { width: calc(100% - 40px); padding: 56px 24px; }
+  .site-footer { width: calc(100% - 40px); flex-direction: column; gap: 8px; text-align: center; }
+}
