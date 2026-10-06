@@ -1,0 +1,502 @@
+/* Shared colors keep the brand consistent and easy to adjust. */
+:root {
+  --cream: #faf6ef;
+  --blush: #ead7d0;
+  --espresso: #30221e;
+  --muted: #726158;
+  --gold: #a28a59;
+  --line: #d9ccbb;
+}
+
+/* Include padding and borders in each element's total width. */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--espresso);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* The header and hero share a centered, spacious page width. */
+.site-header,
+.hero {
+  width: min(1180px, calc(100% - 96px));
+  margin-inline: auto;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding-block: 30px;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.brand-signature {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 32px;
+  font-style: italic;
+}
+
+.brand-divider { color: var(--gold); }
+.brand-name { font-size: 11px; letter-spacing: 0.2em; }
+.tagline { margin: 0; color: var(--muted); font-family: Georgia, serif; font-size: 15px; font-style: italic; }
+.brand:focus-visible { outline: 2px solid var(--gold); outline-offset: 6px; }
+
+/* Two columns give the hero an editorial layout on desktop. */
+.hero {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  align-items: center;
+  gap: 64px;
+  padding-block: 76px 64px;
+}
+
+.eyebrow { margin: 0 0 26px; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; }
+
+h1 {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(40px, 4.5vw, 62px);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.045em;
+}
+
+h1 em { color: #865c50; font-weight: 400; }
+.hero-description { max-width: 490px; margin: 26px 0 30px; color: var(--muted); font-size: 15px; line-height: 1.8; }
+
+/* These links keep their button styling while navigating to page sections. */
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: 50px;
+  padding: 16px 20px;
+  border: 1px solid var(--espresso);
+  border-radius: 0;
+  font: 600 10px Arial, Helvetica, sans-serif;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+}
+.button-primary { background: var(--espresso); color: var(--cream); }
+.button-secondary { background: transparent; color: var(--espresso); }
+.button:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+.hero-mission { max-width: 425px; margin: 36px 0 0; padding-top: 22px; border-top: 1px solid var(--line); font-family: Georgia, serif; font-size: 17px; line-height: 1.6; }
+
+/* A blush card and fine gold lines echo a printed brand cover. */
+.brand-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 490px;
+  padding: 48px 26px;
+  background: var(--blush);
+  text-align: center;
+}
+.brand-card::before { content: ''; position: absolute; inset: 16px; border: 1px solid var(--gold); pointer-events: none; }
+.card-label, .card-footer { font-size: 9px; letter-spacing: 0.22em; }
+.card-monogram { margin: 28px 0 24px; font-family: Georgia, serif; font-size: 112px; font-style: italic; line-height: 1; letter-spacing: -0.12em; }
+.card-monogram span { position: relative; top: 12px; }
+.card-rule { width: 44px; height: 1px; margin-bottom: 24px; background: var(--gold); }
+.card-positioning { font-family: Georgia, serif; font-size: 29px; line-height: 1.3; }
+.card-footer { margin-top: 38px; }
+
+/* The Shift matches the hero's width; its top rule separates the two sections. */
+.shift {
+  width: min(1180px, calc(100% - 96px));
+  margin-inline: auto;
+  padding-block: 64px 80px;
+  border-top: 1px solid var(--line);
+}
+
+.shift-intro { max-width: 760px; }
+.shift h2 {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(32px, 3.6vw, 46px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+}
+.shift-description {
+  max-width: 690px;
+  margin: 24px 0 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* Grid makes three equal columns; minmax lets text fit without overflow. */
+.shift-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+.shift-card {
+  padding: 30px 26px;
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--gold);
+}
+/* A blush middle card adds a quiet accent from the existing brand palette. */
+.shift-card:nth-child(2) { background: var(--blush); }
+.shift-card-label {
+  margin: 0 0 22px;
+  color: var(--espresso);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+}
+.shift-card h3 {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1.25;
+}
+.shift-card-copy {
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* Stack the new cards on phones, keeping the same margins as the hero. */
+@media (max-width: 800px) {
+  .shift { width: calc(100% - 40px); padding-block: 40px 56px; }
+  .shift-cards { grid-template-columns: 1fr; gap: 20px; margin-top: 32px; }
+}
+
+/* On smaller screens, stack the content and reduce the page margins. */
+@media (max-width: 800px) {
+  .site-header, .hero { width: calc(100% - 40px); }
+  .site-header { flex-wrap: wrap; gap: 12px; padding-block: 22px; }
+  .hero { grid-template-columns: 1fr; gap: 40px; padding-block: 48px 40px; }
+  .hero-description { max-width: 560px; }
+  .desktop-break { display: none; }
+  .brand-card { min-height: 380px; }
+}
+
+@media (max-width: 420px) {
+  .brand { gap: 12px; }
+  .brand-name { font-size: 10px; }
+  .tagline { width: 100%; font-size: 14px; }
+  .hero-actions { flex-direction: column; }
+  .button { width: 100%; }
+  h1 { font-size: 40px; }
+}
+
+/* WHAT I BUILT shares the page width and uses a fine editorial divider. */
+.build {
+  width: min(1180px, calc(100% - 96px));
+  margin-inline: auto;
+  padding-block: 64px 80px;
+  border-top: 1px solid var(--line);
+}
+.build-intro { max-width: 760px; }
+.build h2 {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(32px, 3.6vw, 46px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+}
+.build-description {
+  max-width: 690px;
+  margin: 24px 0 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.8;
+}
+.build-rows { margin-top: 48px; }
+
+/* Named grid areas let every other row put the visual on the left. */
+.build-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-areas: "copy visual";
+  align-items: center;
+  gap: 64px;
+  padding-block: 40px;
+}
+.build-row + .build-row { border-top: 1px solid var(--line); }
+.build-row:nth-child(even) { grid-template-areas: "visual copy"; }
+.build-copy { grid-area: copy; }
+.build-number {
+  margin: 0 0 20px;
+  color: var(--gold);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 42px;
+  line-height: 1;
+}
+.build-copy h3 {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  line-height: 1.6;
+}
+.build-copy > p:last-child {
+  max-width: 480px;
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* Shared frames hold either CSS visuals or labeled screenshot placeholders. */
+.build-visual {
+  grid-area: visual;
+  margin: 0;
+  padding: 20px;
+  background: var(--blush);
+  border: 1px solid var(--line);
+}
+.build-row:nth-child(even) .build-visual { background: var(--cream); }
+.screenshot-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  min-height: 250px;
+  padding: 28px 16px;
+  border: 1px solid var(--gold);
+  text-align: center;
+}
+.placeholder-mark {
+  color: var(--gold);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 56px;
+  font-style: italic;
+  line-height: 1;
+}
+.placeholder-note {
+  color: var(--espresso);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+}
+.build-visual figcaption {
+  margin-top: 16px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 17px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* The brand board uses the existing palette and a compact editorial hierarchy. */
+.brand-board {
+  padding: 28px 20px;
+  background: var(--cream);
+  border: 1px solid var(--gold);
+  text-align: center;
+}
+.board-positioning {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(24px, 2.8vw, 32px);
+  line-height: 1.2;
+}
+.board-line {
+  margin: 16px 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 18px;
+  font-style: italic;
+}
+.board-statement { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.7; }
+.board-swatches {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin: 24px 0 0;
+  padding: 20px 0 0;
+  border-top: 1px solid var(--line);
+  list-style: none;
+}
+.board-swatches li { font-size: 10px; line-height: 1.5; }
+.swatch { display: block; height: 28px; margin-bottom: 8px; border: 1px solid var(--line); }
+.swatch-cream { background: var(--cream); }
+.swatch-blush { background: var(--blush); }
+.swatch-espresso { background: var(--espresso); }
+.swatch-gold { background: var(--gold); }
+
+/* A two-by-two grid gives each content pillar its own equal-sized block. */
+.content-system {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.content-system li {
+  display: grid;
+  place-items: center;
+  min-height: 119px;
+  padding: 16px 8px;
+  border: 1px solid var(--gold);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+.content-system li:nth-child(2),
+.content-system li:nth-child(3) { background: var(--blush); }
+
+/* Keep three portrait frames side by side, including on mobile. */
+.pin-placeholders { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.pin-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  aspect-ratio: 2 / 3;
+  min-height: 180px;
+  padding: 18px 6px;
+  border: 1px solid var(--gold);
+  background: var(--cream);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: 0.08em;
+  text-align: center;
+}
+.pin-note { color: var(--muted); font-size: 9px; font-weight: 400; letter-spacing: 0.04em; }
+
+/* On mobile every row reads top to bottom: text, then screenshot frame. */
+@media (max-width: 800px) {
+  .build { width: calc(100% - 40px); padding-block: 40px 56px; }
+  .build-rows { margin-top: 24px; }
+  .build-row,
+  .build-row:nth-child(even) {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "copy" "visual";
+    gap: 28px;
+    padding-block: 32px;
+  }
+  .build-visual { padding: 16px; }
+  .screenshot-placeholder { min-height: 220px; }
+}
+.build-image {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  max-height: 500px;
+  height: auto;
+  object-fit: contain;
+  margin-inline: auto;
+}
+
+/* HOW I BUILT THIS uses a compact timeline instead of screenshot rows. */
+.process {
+  width: min(1180px, calc(100% - 96px));
+  margin-inline: auto;
+  padding-block: 64px 80px;
+  border-top: 1px solid var(--line);
+}
+.process-intro { max-width: 760px; }
+.process h2 {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(32px, 3.6vw, 46px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+}
+.process-description {
+  max-width: 690px;
+  margin: 24px 0 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.8;
+}
+.process-timeline { margin: 48px 0 0; padding: 0; list-style: none; }
+
+/* Each step has a number, tool name, and explanation in three aligned columns. */
+.process-step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 48px 190px minmax(0, 1fr);
+  gap: 24px;
+  padding: 28px 24px;
+}
+/* A line connects each numbered circle to the next; the final circle ends it. */
+.process-step:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  left: 47px;
+  top: 28px;
+  bottom: -28px;
+  width: 1px;
+  background: var(--gold);
+}
+.process-number {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  background: var(--cream);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 20px;
+}
+.process-tool {
+  margin: 14px 0 0;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  line-height: 1.8;
+}
+.process-detail { padding-bottom: 28px; border-bottom: 1px solid var(--line); }
+.process-detail h3 {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+.process-detail p { margin: 12px 0 0; color: var(--muted); font-size: 14px; line-height: 1.8; }
+
+/* Blush and espresso emphasize the person who directed and reviewed the work. */
+.process-step-jaida { background: var(--blush); border: 1px solid var(--gold); }
+.process-step-jaida .process-number { background: var(--espresso); color: var(--cream); }
+.process-step-jaida .process-tool { font-size: 13px; }
+.process-step-jaida .process-detail { padding-bottom: 0; border-bottom: 0; }
+.process-step-jaida h3 { font-size: 30px; }
+.process-step-jaida .process-detail p { color: var(--espresso); }
+
+/* On mobile, the tool and explanation stack beside the numbered timeline. */
+@media (max-width: 800px) {
+  .process { width: calc(100% - 40px); padding-block: 40px 56px; }
+  .process-timeline { margin-top: 32px; }
+  .process-step {
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 12px 16px;
+    padding: 24px 12px;
+  }
+  .process-step:not(:last-child)::before { left: 35px; top: 24px; bottom: -24px; }
+  .process-number { grid-column: 1; grid-row: 1 / 3; }
+  .process-tool { grid-column: 2; margin-top: 12px; }
+  .process-detail { grid-column: 2; padding-bottom: 16px; }
+  .process-detail h3 { font-size: 24px; }
+  .process-step-jaida h3 { font-size: 28px; }
+}

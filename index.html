@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <!-- Let the layout match the screen width on phones. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jaida Mayrie — Brand Rebuild: Day One. A personal brand rebuilt with intention, creativity, and confidence.">
+    <title>Jaida Mayrie — Brand Rebuild: Day One</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <!-- The header introduces the brand; navigation can come later. -->
+    <header class="site-header">
+      <a class="brand" href="#hero" aria-label="Jaida Mayrie home">
+        <span class="brand-signature">JMay</span>
+        <span class="brand-divider" aria-hidden="true">|</span>
+        <span class="brand-name">JAIDA MAYRIE</span>
+      </a>
+      <p class="tagline">A More Intentional Life</p>
+    </header>
+
+    <main>
+      <!-- The hero introduces the brand rebuild. -->
+      <section class="hero" id="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">BRAND REBUILD · DAY ONE</p>
+          <h1 id="hero-title">I rebuilt my personal brand<br class="desktop-break"> <em>with intention.</em></h1>
+          <p class="hero-description">One focused day turned scattered ideas into a clear brand, a content system, refreshed platforms, and a plan I can actually execute.</p>
+
+          <!-- Links use section IDs to jump to content on this same page. -->
+          <div class="hero-actions" role="group" aria-label="Case study sections">
+            <a class="button button-primary" href="#build">SEE WHAT I BUILT <span aria-hidden="true">↗</span></a>
+            <a class="button button-secondary" href="#strategy">SEE THE STRATEGY <span aria-hidden="true">↗</span></a>
+          </div>
+          <p class="hero-mission">Helping women build their next chapter with intention, creativity &amp; confidence.</p>
+        </div>
+
+        <!-- A decorative brand card adds warmth without needing an image. -->
+        <div class="brand-card" aria-hidden="true">
+          <span class="card-label">THE NEXT CHAPTER</span>
+          <span class="card-monogram">J<span>M</span></span>
+          <span class="card-rule"></span>
+          <span class="card-positioning">Intentional<br><em>Reinvention</em></span>
+          <span class="card-footer">JAIDA MAYRIE · DAY ONE</span>
+        </div>
+      </section>
+
+      <!-- Each section has a heading so its purpose is clear to screen readers. -->
+      <section class="shift" id="strategy" aria-labelledby="shift-title">
+        <div class="shift-intro">
+          <p class="eyebrow">THE SHIFT</p>
+          <h2 id="shift-title">From “posting content” to building a brand.</h2>
+          <p class="shift-description">I stopped trying to make every interest fit into a random content bucket and built one umbrella that could hold the whole journey: writing, grad school, AI, creator life, routines, faith, and real-life reinvention.</p>
+        </div>
+
+        <!-- These articles are related ideas, each with its own heading. -->
+        <div class="shift-cards">
+          <article class="shift-card">
+            <p class="shift-card-label">POSITIONING</p>
+            <h3>Intentional Reinvention</h3>
+            <p class="shift-card-copy">Building your next chapter without waiting until you have it all figured out.</p>
+          </article>
+          <article class="shift-card">
+            <p class="shift-card-label">BRAND LINE</p>
+            <h3>A More Intentional Life</h3>
+            <p class="shift-card-copy">A simple idea connecting ambition, softness, creativity, and everyday life.</p>
+          </article>
+          <article class="shift-card">
+            <p class="shift-card-label">BRAND STATEMENT</p>
+            <h3>Build the next chapter.</h3>
+            <p class="shift-card-copy">Helping women build their next chapter with intention, creativity &amp; confidence.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- This ID is the destination for the hero's “SEE WHAT I BUILT” link. -->
+      <section class="build" id="build" aria-labelledby="build-title">
+        <div class="build-intro">
+          <p class="eyebrow">WHAT I BUILT</p>
+          <h2 id="build-title">One day. A completely different brand foundation.</h2>
+          <p class="build-description">The strategy did not stay in a document. I turned it into profiles, content, systems, and a clearer digital presence.</p>
+        </div>
+
+        <!-- Text stays first in HTML; CSS alternates the desktop columns. -->
+        <div class="build-rows">
+          <article class="build-row" aria-labelledby="build-item-1">
+            <div class="build-copy">
+              <p class="build-number">01</p>
+              <h3 id="build-item-1">BRAND FOUNDATION</h3>
+              <p>Defined the Jaida Mayrie brand around Intentional Reinvention, with “A More Intentional Life” as the brand line and a clear audience-focused brand statement.</p>
+            </div>
+            <!-- A small brand board presents the positioning, statement, and existing palette. -->
+            <figure class="build-visual">
+              <div class="brand-board">
+                <p class="board-positioning">Intentional Reinvention</p>
+                <p class="board-line">A More Intentional Life</p>
+                <p class="board-statement">Helping women build their next chapter with intention, creativity &amp; confidence.</p>
+                <!-- Color names make the palette understandable without relying on color alone. -->
+                <ul class="board-swatches" aria-label="Brand color palette">
+                  <li><span class="swatch swatch-cream" aria-hidden="true"></span>Cream</li>
+                  <li><span class="swatch swatch-blush" aria-hidden="true"></span>Blush</li>
+                  <li><span class="swatch swatch-espresso" aria-hidden="true"></span>Espresso</li>
+                  <li><span class="swatch swatch-gold" aria-hidden="true"></span>Muted gold</li>
+                </ul>
+              </div>
+              <figcaption>Brand Foundation</figcaption>
+            </figure>
+          </article>
+          <article class="build-row" aria-labelledby="build-item-2">
+            <div class="build-copy">
+              <p class="build-number">02</p>
+              <h3 id="build-item-2">PLATFORM REBRAND</h3>
+              <p>Aligned Facebook, Instagram, and TikTok around the same identity, messaging, visual direction, and “Start Here” experience.</p>
+            </div>
+            <!-- Replace this figure's placeholder with your real screenshot later. -->
+            <figure class="build-visual">
+              <div class="screenshot-placeholder" aria-hidden="true">
+                <span class="placeholder-mark">02</span>
+                <span class="placeholder-note"><img
+  class="build-image"
+  src="assets/images/insta.jpg"
+  alt="Instagram profile rebrand"
+>
+          </article>
+          <article class="build-row" aria-labelledby="build-item-3">
+            <div class="build-copy">
+              <p class="build-number">03</p>
+              <h3 id="build-item-3">BEACONS HUB</h3>
+              <p>Rebuilt my link-in-bio experience to connect my books, Goodreads, creator work, brand partnerships, collaborations, and business inquiries.</p>
+            </div>
+            <!-- Replace this figure's placeholder with your real screenshot later. -->
+            <figure class="build-visual">
+              <div class="screenshot-placeholder" aria-hidden="true">
+                <span class="placeholder-mark">03</span>
+                <span class="placeholder-note"><img class="build-image"
+                  src="assets/images/Beacon.JPG"
+                  alt="Beacon Hub"></span>
+              </div>
+              <figcaption>Beacons — Rebuilt Link Hub</figcaption>
+            </figure>
+          </article>
+          <article class="build-row" aria-labelledby="build-item-4">
+            <div class="build-copy">
+              <p class="build-number">04</p>
+              <h3 id="build-item-4">CONTENT SYSTEM</h3>
+              <p>Created four content pillars: TEACH, PROVE, BELIEVE, and CONNECT — giving every piece of content a clear job.</p>
+            </div>
+            <!-- These four editorial blocks are built with HTML and CSS. -->
+            <figure class="build-visual">
+              <!-- A list groups the four related content pillars. -->
+              <ul class="content-system" aria-label="Content pillars">
+              <img class="build-image" src="assets/images/JMay_TEACH.png"
+                alt="TEACH">
+              <img class="build-image" src="assets/images/JMay_PROVE.png">
+              <img class="build-image" src="assets/images/JMay_BELIEVE.png" alt ="BELIEVE">
+              <img class="build-image" src="assets/images/JMay_CONNECT.png" alt="CONNECT">
+              </ul>
+              <figcaption>TEACH · PROVE · BELIEVE · CONNECT</figcaption>
+            </figure>
+          </article>
+          <article class="build-row" aria-labelledby="build-item-5">
+            <div class="build-copy">
+              <p class="build-number">05</p>
+              <h3 id="build-item-5">THREE-PIN STRATEGY</h3>
+              <p>Created a pinned content journey: START HERE → BUILDING MINE IN REAL TIME → BUILD YOUR NEXT CHAPTER WITH ME.</p>
+            </div>
+            <!-- Three narrow frames reserve space for the real pin covers. -->
+            <figure class="build-visual">
+              <!-- Replace each empty frame with its matching pin cover image later. -->
+              <div class="pin-placeholders">
+                <div class="pin-placeholder"><img class="build-image" src="assets/images/start.PNG"></div>
+                <div class="pin-placeholder"><img class="build-image" src="assets/images/real.PNG"></div> 
+                <div class="pin-placeholder"><img class="build-image" src="assets/images/Build.PNG"></div>
+              </div>
+              <figcaption>Three-Pin Content Journey</figcaption>
+            </figure>
+          </article>
+          <article class="build-row" aria-labelledby="build-item-6">
+            <div class="build-copy">
+              <p class="build-number">06</p>
+              <h3 id="build-item-6">RECURRING CONTENT</h3>
+              <p>Refreshed my Morning Prayer visual system and created a new direction for afternoon educational content and evening community content.</p>
+            </div>
+            <!-- Replace this figure's placeholder with your real screenshot later. -->
+            <figure class="build-visual">
+              <img class="build-image" src="assets/images/prayer.PNG"
+              </div>
+              <figcaption>Morning Prayer — New Visual System</figcaption>
+            </figure>
+          </article>
+        </div>
+      </section>
+
+      <!-- An ordered list communicates the workflow's sequence without JavaScript. -->
+      <section class="process" id="process" aria-labelledby="process-title">
+        <div class="process-intro">
+          <p class="eyebrow">HOW I BUILT THIS</p>
+          <h2 id="process-title">AI was part of the process — not the whole process.</h2>
+          <p class="process-description">I used AI to help me move faster from ideas to execution, but I stayed responsible for the strategy, decisions, review, corrections, and final direction.</p>
+        </div>
+
+        <ol class="process-timeline">
+          <li class="process-step">
+            <span class="process-number" aria-hidden="true">01</span>
+            <p class="process-tool">CHATGPT</p>
+            <div class="process-detail">
+              <h3>Strategy &amp; Direction</h3>
+              <p>Used ChatGPT to work through my positioning, messaging, content pillars, brand direction, platform strategy, and the plan for this case study.</p>
+            </div>
+          </li>
+          <li class="process-step">
+            <span class="process-number" aria-hidden="true">02</span>
+            <p class="process-tool">CODEX CLOUD</p>
+            <div class="process-detail">
+              <h3>First Build</h3>
+              <p>Connected Codex to my GitHub repository and used it to create the first HTML and CSS foundation for this website.</p>
+            </div>
+          </li>
+          <li class="process-step">
+            <span class="process-number" aria-hidden="true">03</span>
+            <p class="process-tool">GITHUB</p>
+            <div class="process-detail">
+              <h3>Version Control</h3>
+              <p>Used a feature branch and commits to track changes, preserve working versions, and keep the project organized.</p>
+            </div>
+          </li>
+          <li class="process-step">
+            <span class="process-number" aria-hidden="true">04</span>
+            <p class="process-tool">VS CODE + CODEX</p>
+            <div class="process-detail">
+              <h3>Build &amp; Learn</h3>
+              <p>Continued developing locally in VS Code with Codex while learning how the HTML and CSS worked, reviewing changes before committing them.</p>
+            </div>
+          </li>
+          <li class="process-step">
+            <span class="process-number" aria-hidden="true">05</span>
+            <p class="process-tool">LIVE SERVER</p>
+            <div class="process-detail">
+              <h3>Test &amp; Review</h3>
+              <p>Ran the website locally, reviewed each section in the browser, found layout issues, and made corrections before saving new versions.</p>
+            </div>
+          </li>
+          <!-- The final step highlights Jaida’s responsibility for the finished work. -->
+          <li class="process-step process-step-jaida">
+            <span class="process-number" aria-hidden="true">06</span>
+            <p class="process-tool">JAIDA</p>
+            <div class="process-detail">
+              <h3>Creative Direction</h3>
+              <p>Made the decisions. Chose the strategy, shaped and approved the messaging, selected the visuals, corrected code, added assets manually, reviewed the AI output, and decided what actually shipped.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+    </main>
+  </body>
+</html>
