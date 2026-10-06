@@ -403,3 +403,100 @@ h1 em { color: #865c50; font-weight: 400; }
   object-fit: contain;
   margin-inline: auto;
 }
+
+/* HOW I BUILT THIS uses a compact timeline instead of screenshot rows. */
+.process {
+  width: min(1180px, calc(100% - 96px));
+  margin-inline: auto;
+  padding-block: 64px 80px;
+  border-top: 1px solid var(--line);
+}
+.process-intro { max-width: 760px; }
+.process h2 {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(32px, 3.6vw, 46px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+}
+.process-description {
+  max-width: 690px;
+  margin: 24px 0 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.8;
+}
+.process-timeline { margin: 48px 0 0; padding: 0; list-style: none; }
+
+/* Each step has a number, tool name, and explanation in three aligned columns. */
+.process-step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 48px 190px minmax(0, 1fr);
+  gap: 24px;
+  padding: 28px 24px;
+}
+/* A line connects each numbered circle to the next; the final circle ends it. */
+.process-step:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  left: 47px;
+  top: 28px;
+  bottom: -28px;
+  width: 1px;
+  background: var(--gold);
+}
+.process-number {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  background: var(--cream);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 20px;
+}
+.process-tool {
+  margin: 14px 0 0;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  line-height: 1.8;
+}
+.process-detail { padding-bottom: 28px; border-bottom: 1px solid var(--line); }
+.process-detail h3 {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+.process-detail p { margin: 12px 0 0; color: var(--muted); font-size: 14px; line-height: 1.8; }
+
+/* Blush and espresso emphasize the person who directed and reviewed the work. */
+.process-step-jaida { background: var(--blush); border: 1px solid var(--gold); }
+.process-step-jaida .process-number { background: var(--espresso); color: var(--cream); }
+.process-step-jaida .process-tool { font-size: 13px; }
+.process-step-jaida .process-detail { padding-bottom: 0; border-bottom: 0; }
+.process-step-jaida h3 { font-size: 30px; }
+.process-step-jaida .process-detail p { color: var(--espresso); }
+
+/* On mobile, the tool and explanation stack beside the numbered timeline. */
+@media (max-width: 800px) {
+  .process { width: calc(100% - 40px); padding-block: 40px 56px; }
+  .process-timeline { margin-top: 32px; }
+  .process-step {
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 12px 16px;
+    padding: 24px 12px;
+  }
+  .process-step:not(:last-child)::before { left: 35px; top: 24px; bottom: -24px; }
+  .process-number { grid-column: 1; grid-row: 1 / 3; }
+  .process-tool { grid-column: 2; margin-top: 12px; }
+  .process-detail { grid-column: 2; padding-bottom: 16px; }
+  .process-detail h3 { font-size: 24px; }
+  .process-step-jaida h3 { font-size: 28px; }
+}
