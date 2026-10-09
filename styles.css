@@ -8,6 +8,48 @@
   --line: #d9ccbb;
 }
 
+/* Day links wrap naturally on narrow screens and underline the current day. */
+.day-navigation { display: flex; flex-wrap: wrap; gap: 24px; }
+.day-navigation a {
+  padding-block: 8px;
+  border-bottom: 1px solid transparent;
+  color: var(--espresso);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-decoration: none;
+}
+.day-navigation a[aria-current="page"],
+.day-navigation a:hover { border-bottom-color: var(--gold); }
+.day-navigation a:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+
+/* Day Two extends the shared blush cover with a large issue number. */
+.day-two-visual .day-two-number {
+  color: var(--espresso);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 112px;
+  font-style: italic;
+  line-height: 1;
+  letter-spacing: -0.06em;
+}
+.day-two-steps { margin-block: 26px; font-size: 15px; line-height: 1.9; letter-spacing: 0.24em; }
+.day-two-visual .card-rule { margin-bottom: 0; }
+.day-two-visual .card-footer { margin-top: 24px; line-height: 1.8; }
+
+/* Only the homework cards get these extra heading and concept styles. */
+.content-level h3.shift-card-label {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: 0.18em;
+}
+.content-level-purpose { margin: 12px 0 0; font-family: Georgia, serif; font-size: 22px; line-height: 1.4; }
+.content-level-concept { margin-top: 28px; padding-top: 22px; border-top: 1px solid var(--line); }
+.content-level-concept .shift-card-label { margin-bottom: 10px; }
+.content-level h4 { margin: 0; font-family: Georgia, serif; font-size: 26px; font-weight: 400; line-height: 1.25; }
+
 /* Include padding and borders in each element's total width. */
 * { box-sizing: border-box; }
 
@@ -484,6 +526,60 @@ h1 em { color: #865c50; font-weight: 400; }
 .process-step-jaida h3 { font-size: 30px; }
 .process-step-jaida .process-detail p { color: var(--espresso); }
 
+/* Day Two's journal pairs a portrait preview with ruled, numbered entries.
+   These dedicated classes leave the earlier sections and Day One untouched. */
+.production-journal {
+  width: min(1180px, calc(100% - 96px));
+  margin-inline: auto;
+  padding-block: 64px 80px;
+  border-top: 1px solid var(--line);
+}
+.production-intro { max-width: 820px; }
+.production-intro h2 {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(32px, 3.6vw, 46px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+}
+.production-description { max-width: 690px; margin: 24px 0 0; color: var(--muted); font-size: 15px; line-height: 1.8; }
+.production-layout { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); align-items: start; gap: 56px; margin-top: 48px; }
+.production-preview { margin: 0; padding: 20px; background: var(--blush); border: 1px solid var(--line); }
+.production-video-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  aspect-ratio: 9 / 16;
+  padding: 28px;
+  border: 1px solid var(--gold);
+  text-align: center;
+}
+.production-preview-mark { font-family: Georgia, serif; font-size: clamp(72px, 8vw, 112px); font-style: italic; line-height: 1; }
+.production-video-placeholder p { max-width: 220px; margin: 0; font-size: 11px; font-weight: 600; line-height: 1.8; letter-spacing: 0.18em; }
+.production-preview figcaption { margin-top: 16px; font-family: Georgia, serif; font-size: 17px; font-style: italic; line-height: 1.5; text-align: center; }
+/* The real video will fit the same frame without cropping its content. */
+.production-video { display: block; width: 100%; height: auto; background: var(--espresso); }
+.production-entries { margin: 0; padding: 0; list-style: none; }
+.production-entry { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 20px; padding-block: 26px; border-top: 1px solid var(--line); }
+.production-number { color: var(--muted); font-family: Georgia, serif; font-size: 32px; line-height: 1; }
+.production-entry h3 { margin: 0; font-size: 11px; font-weight: 600; line-height: 1.7; letter-spacing: 0.14em; }
+.production-entry p { margin: 12px 0 0; color: var(--muted); font-size: 14px; line-height: 1.8; }
+.production-decision { margin-top: 12px; padding: 28px 24px; border: 1px solid var(--gold); border-left-width: 4px; background: var(--espresso); color: var(--cream); }
+.production-decision .production-number { color: var(--blush); }
+.production-decision p { color: var(--cream); }
+
+/* The preview and journal stack on phones; all six entries keep their order. */
+@media (max-width: 800px) {
+  .production-journal { width: calc(100% - 40px); padding-block: 40px 56px; }
+  .production-layout { grid-template-columns: minmax(0, 1fr); gap: 32px; margin-top: 32px; }
+  .production-preview { width: 100%; max-width: 400px; margin-inline: auto; padding: 16px; }
+  .production-entry { gap: 16px; }
+  .production-decision { padding: 24px 16px; }
+}
+
 /* On mobile, the tool and explanation stack beside the numbered timeline. */
 @media (max-width: 800px) {
   .process { width: calc(100% - 40px); padding-block: 40px 56px; }
@@ -499,4 +595,60 @@ h1 em { color: #865c50; font-weight: 400; }
   .process-detail { grid-column: 2; padding-bottom: 16px; }
   .process-detail h3 { font-size: 24px; }
   .process-step-jaida h3 { font-size: 28px; }
+}
+.day2-video {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  max-height: 500px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+/* Day Two's final reflection shares the existing page width and typography.
+   These classes apply only to the new closing section and footer. */
+.closing-takeaway,
+.day-two-footer {
+  width: min(1180px, calc(100% - 96px));
+  margin-inline: auto;
+  border-top: 1px solid var(--line);
+}
+.closing-takeaway { padding-block: 64px; }
+.closing-takeaway h2 {
+  max-width: 900px;
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(32px, 3.6vw, 46px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+}
+.closing-body { max-width: 740px; margin-top: 28px; }
+.closing-body p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.8; }
+.closing-body p + p { margin-top: 20px; }
+.closing-statement {
+  margin-top: 40px;
+  padding: 40px 48px;
+  border-block: 1px solid var(--gold);
+  background: var(--blush);
+}
+.closing-statement p {
+  max-width: 850px;
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(24px, 2.8vw, 34px);
+  font-style: italic;
+  line-height: 1.4;
+}
+.day-two-footer { display: flex; align-items: center; justify-content: space-between; gap: 32px; padding-block: 32px 48px; }
+.closing-signoff .brand { margin: 0 0 12px; }
+
+/* Keep comfortable reading margins and stack the sign-off and links on phones. */
+@media (max-width: 800px) {
+  .closing-takeaway,
+  .day-two-footer { width: calc(100% - 40px); }
+  .closing-takeaway { padding-block: 40px; }
+  .closing-statement { margin-top: 32px; padding: 28px 24px; }
+  .day-two-footer { flex-direction: column; align-items: flex-start; gap: 24px; padding-block: 28px 40px; }
 }
