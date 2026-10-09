@@ -10,14 +10,23 @@
   </head>
   <body>
     <!-- The header introduces the brand; navigation can come later. -->
-    <header class="site-header">
-      <a class="brand" href="#hero" aria-label="Jaida Mayrie home">
-        <span class="brand-signature">JMay</span>
-        <span class="brand-divider" aria-hidden="true">|</span>
-        <span class="brand-name">JAIDA MAYRIE</span>
-      </a>
-      <p class="tagline">A More Intentional Life</p>
-    </header>
+
+<header class="site-header">
+  <!-- Jaida Mayrie branding -->
+  <a class="brand" href="index.html" aria-label="Jaida Mayrie home">
+    <span class="brand-signature">JMay</span>
+    <span class="brand-divider" aria-hidden="true">|</span>
+    <span class="brand-name">JAIDA MAYRIE</span>
+  </a>
+
+  <!-- Navigation between case study days -->
+  <nav class="day-navigation" aria-label="Case study days">
+    <a href="index.html" aria-current="page">DAY ONE</a>
+    <a href="day2.html">DAY TWO →</a>
+    <a href="day3.html">DAY THREE</a>
+  </nav>
+</header>
+
 
     <main>
       <!-- The hero introduces the brand rebuild. -->
@@ -33,17 +42,14 @@
             <a class="button button-secondary" href="#strategy">SEE THE STRATEGY <span aria-hidden="true">↗</span></a>
             <!-- Continue the case-study series on its own page. -->
             <a class="button button-secondary" href="day2.html">DAY TWO →</a>
+            <a class="button button-secondary" href="day3.html">DAY THREE →</a>
           </div>
           <p class="hero-mission">Helping women build their next chapter with intention, creativity &amp; confidence.</p>
         </div>
 
         <!-- A decorative brand card adds warmth without needing an image. -->
         <div class="brand-card" aria-hidden="true">
-          <span class="card-label">THE NEXT CHAPTER</span>
-          <span class="card-monogram">J<span>M</span></span>
-          <span class="card-rule"></span>
-          <span class="card-positioning">Intentional<br><em>Reinvention</em></span>
-          <span class="card-footer">JAIDA MAYRIE · DAY ONE</span>
+          <img class="build-image" src="assets/images/Intentional Reinvention Workspace.png"
         </div>
       </section>
 

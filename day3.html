@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <!-- Match the layout to the screen width on phones. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jaida Mayrie — Brand Rebuild: Day Three. From Prompt to Production: learning to communicate a creative vision with purpose.">
+    <title>Jaida Mayrie — Brand Rebuild: Day Three — From Prompt to Production</title>
+    <!-- All three days share the same brand stylesheet. -->
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Jaida Mayrie home">
+        <span class="brand-signature">JMay</span>
+        <span class="brand-divider" aria-hidden="true">|</span>
+        <span class="brand-name">JAIDA MAYRIE</span>
+      </a>
+      <!-- aria-current underlines the day you are reading. -->
+      <nav class="day-navigation" aria-label="Case study days">
+        <a href="index.html">DAY ONE</a>
+        <a href="day2.html">DAY TWO</a>
+        <a href="day3.html" aria-current="page">DAY THREE</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">FROM PROMPT TO PRODUCTION · DAY THREE</p>
+          <h1 id="hero-title">I had the vision.<br>Then I learned <em>how to prompt it.</em></h1>
+          <p class="hero-description">Day Three was about moving beyond experimenting with AI and learning how to communicate a creative vision. I explored how prompts, visual references, movement instructions, and revisions shape the final video.</p>
+        </div>
+
+        <!-- This editorial graphic is built with text and CSS, without an image. -->
+        <div class="brand-card day-three-visual" aria-hidden="true">
+          <img class="build-image" src="assets/images/The Next Chapter_ Ideas to Impact.png"
+        </div>
+      </section>
+
+      <!-- Reuse the existing section and card styles for the learning journal. -->
+      <section class="shift day-three-learning" aria-labelledby="learning-title">
+        <div class="shift-intro">
+          <p class="eyebrow">WHAT I LEARNED</p>
+          <h2 id="learning-title">What I Learned</h2>
+        </div>
+        <div class="shift-cards day-three-cards">
+          <article class="shift-card">
+            <img class="build-image" src="assets/images/Day3_Card_01.png">
+            <p class="shift-card-copy">Learning how specific instructions influence the results.</p>
+          </article>
+          <article class="shift-card">
+            <img class="build-image" src="assets/images/Day3_Card_02.png">
+            <p class="shift-card-copy">Understanding how reference images help maintain a recognizable character.</p>
+          </article>
+          <article class="shift-card">
+            <img class="build-image" src="assets/images/Day3_Card_03.png">
+            <p class="shift-card-copy">Learning to describe natural speaking movements, gestures, and expressions.</p>
+          </article>
+          <article class="shift-card">
+            <img class="build-image" src="assets/images/Day3_Card_04.png">
+            <p class="shift-card-copy">Evaluating results and refining instructions instead of accepting every generation.</p>
+          </article>
+        </div>
+      </section>
+      <!-- The creation follows the learning cards, using the same section styles. -->
+      <section class="shift day-three-creation" aria-labelledby="creation-title">
+        <div class="shift-intro">
+          <p class="eyebrow">THE CREATION</p>
+          <h2 id="creation-title">From the prompt to the final video.</h2>
+          <p class="shift-description">After learning how to communicate my creative vision through AI prompts, I put those lessons into practice by creating my own video. This project allowed me to experiment with visual consistency, realistic movement, and creative direction.</p>
+        </div>
+
+        <!-- Save the finished video at the source path below.
+             Native controls work without JavaScript; playsinline keeps playback inline on phones. -->
+        <figure class="day-three-video-showcase">
+          <div class="day-three-video-frame">
+            <video class="day-three-video" controls playsinline preload="metadata" aria-label="Day Three — My AI Video Creation">
+              <source src="assets/images/Day3 video.mp4" type="video/mp4">
+            </video>
+          </div>
+          <figcaption>Day Three — My AI Video Creation</figcaption>
+        </figure>
+
+        <!-- A short reflection ties the finished work back to the learning process. -->
+        <p class="day-three-video-reflection">Every prompt was a chance to learn. Every revision helped me understand how to communicate my vision more clearly. The goal wasn't just to generate a video — it was to learn how to direct the creative process.</p>
+      </section>
+    </main>
+  </body>
+</html>
