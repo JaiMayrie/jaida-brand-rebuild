@@ -148,7 +148,13 @@
     line-height: 1.4;
     text-align: center;
 }
-    .day-five .d5-footer { display: flex; align-items: center; justify-content: space-between; gap: 32px; padding-block: 38px 48px; }
+    /* Branding and navigation are separate desktop columns, stacked on phones. */
+    .day-five .d5-footer { display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 32px; padding-block: 38px 48px; }
+    .day-five .d5-footer > .closing-signoff { flex: 0 0 auto; }
+    .day-five .d5-footer .brand { margin: 0 0 12px; }
+    .day-five .d5-footer-navigation { display: flex; flex-direction: column; align-items: flex-end; gap: 16px; min-width: 0; }
+    .day-five .d5-footer-navigation > a { display: inline-flex; align-items: center; min-height: 44px; font-size: 12px; }
+    .day-five .d5-footer .day-navigation { justify-content: flex-end; gap: 8px 20px; }
     .day-five .d5-footer-name { margin: 0; font: italic 25px/1.4 Georgia, 'Times New Roman', serif; }
     .day-five .d5-footer-tagline { margin: 6px 0 0; color: var(--muted); font: italic 15px/1.6 Georgia, 'Times New Roman', serif; }
     .day-five .d5-footer-links { display: flex; flex-wrap: wrap; gap: 12px 28px; }
@@ -169,6 +175,8 @@
       .day-five .d5-script { padding-left: 22px; }
       .day-five .d5-closing { padding: 32px 24px; }
       .day-five .d5-footer { flex-direction: column; align-items: flex-start; gap: 20px; padding-block: 28px 36px; }
+      .day-five .d5-footer-navigation { align-items: flex-start; width: 100%; }
+      .day-five .d5-footer .day-navigation { justify-content: flex-start; gap: 8px 18px; }
     }
     @media (max-width: 420px) {
       .day-five .brand { gap: 12px; }
@@ -348,8 +356,7 @@
     </blockquote>
   </main>
 
-  </footer>
-  <footer class="day-two-footer">
+  <footer class="d5-wrap d5-footer">
       <div class="closing-signoff">
         <p class="brand">
           <span class="brand-signature">JMay</span>
@@ -357,6 +364,8 @@
           <span class="brand-name">JAIDA MAYRIE</span>
         </p>
         <p class="tagline">A More Intentional Life</p>
+      </div>
+      <div class="d5-footer-navigation">
       <a href="index.html">Back to the brand rebuild ↑</a>
       <nav class="day-navigation" aria-label="Continue the case study">
 
@@ -366,6 +375,7 @@
         <a href="day4.html">DAY FOUR</a>
         <a href="day5.html" aria-current="page">DAY FIVE</a>
       </nav>
+      </div>
     </footer>
 </body>
 </html>
