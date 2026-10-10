@@ -106,7 +106,14 @@
     .day-five .d5-definition { padding: 32px; }
     .day-five .d5-definition + .d5-definition { border-left: 1px solid var(--line); background: var(--blush); }
     .day-five .d5-label { margin: 0 0 16px; font-size: 10px; font-weight: 600; line-height: 1.6; letter-spacing: .16em; text-transform: uppercase; }
-    .day-five .d5-definition h3 { margin: 0; font: 400 30px/1.25 Georgia, 'Times New Roman', serif; }
+.day-five .d5-definition h3 {
+    margin: 20px 0;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1.25;
+    text-align: center;
+}
     .day-five .d5-definition p:last-child { margin: 14px 0 0; font-size: 14px; line-height: 1.8; color: var(--muted); }
     .day-five .d5-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 36px; }
     .day-five .d5-card { padding: 30px; border: 1px solid var(--line); border-top: 2px solid var(--gold); }
@@ -131,7 +138,16 @@
     .day-five .d5-closing {
       margin: 0; padding: 44px 48px; border-block: 1px solid var(--gold); background: var(--blush);
     }
-    .day-five .d5-closing p { max-width: 940px; margin: 0; font: italic clamp(30px, 3.6vw, 46px)/1.3 Georgia, 'Times New Roman', serif; letter-spacing: -.02em; }
+    .day-five .d5-closing p {
+    max-width: 900px;
+    margin: 0 auto;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 32px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.4;
+    text-align: center;
+}
     .day-five .d5-footer { display: flex; align-items: center; justify-content: space-between; gap: 32px; padding-block: 38px 48px; }
     .day-five .d5-footer-name { margin: 0; font: italic 25px/1.4 Georgia, 'Times New Roman', serif; }
     .day-five .d5-footer-tagline { margin: 6px 0 0; color: var(--muted); font: italic 15px/1.6 Georgia, 'Times New Roman', serif; }
@@ -171,6 +187,28 @@
       .day-five .d5-card, .day-five .d5-definition, .day-five .d5-closing { break-inside: avoid; }
       .day-five .d5-script { margin-top: 24px; }
     }
+    /* Only the new Day Five creation uses these video and reflection styles. */
+    .day-five .d5-creation-frame {
+      width: min(100%, 900px); min-width: 0; margin: 32px auto 0;
+      padding: 24px; border: 1px solid var(--gold); background: var(--blush);
+    }
+    /* Auto height and contain keep the original picture visible without cropping. */
+    .day-five .d5-creation-video {
+      display: block; width: 100%; max-width: 100%; height: auto;
+      max-height: 550px; object-fit: contain; background: var(--espresso);
+    }
+    .day-five .d5-creation-video:focus-visible {
+      outline: 2px solid var(--espresso); outline-offset: 5px;
+    }
+    .day-five .d5-creation-reflection {
+      max-width: 690px; margin: 28px auto 0; padding-left: 22px;
+      border-left: 2px solid var(--gold); color: var(--muted);
+      font: italic 18px/1.8 Georgia, 'Times New Roman', serif;
+    }
+    @media (max-width: 800px) {
+      .day-five .d5-creation-frame { margin-top: 26px; padding: 16px; }
+      .day-five .d5-creation-reflection { margin-top: 24px; padding-left: 18px; font-size: 17px; }
+    }
   </style>
 </head>
 <body class="day-five">
@@ -203,13 +241,7 @@
         </div>
       </div>
       <!-- An editorial cover made from live text; no new photo generation required. -->
-      <div class="d5-cover" aria-hidden="true">
-        <p class="d5-cover-label">JAIDA MAYRIE · THE BUILD JOURNAL</p>
-        <div class="d5-cover-number">05</div>
-        <div class="d5-cover-rule"></div>
-        <p class="d5-cover-title">Show up.<br>Work with intention.</p>
-        <p class="d5-cover-note">A process I can keep up with.<br>Not more work for the sake of it.</p>
-        <p class="d5-cover-label">A MORE INTENTIONAL LIFE</p>
+        <img class="build-image" src="assets/images/Consistency Over Efficiency.png" alt="Consistency Over Efficiency">
       </div>
     </section>
 
@@ -220,12 +252,14 @@
       <div class="d5-comparison">
         <article class="d5-definition">
           <p class="d5-label">Consistency</p>
-          <h3>Showing up.</h3>
+          <img class="build-image" src="assets/images/Showingup.png" alt="Workspace representing consistency">
+          <h3>Showing up</h3>
           <p>Keeping the commitment to create, share, and connect.</p>
         </article>
         <article class="d5-definition">
           <p class="d5-label">Efficiency</p>
-          <h3>Making it manageable.</h3>
+          <img class="build-image" src="assets/images/makingitmanaeable.png" alt="Workspace representing efficiency">
+          <h3>Making it manageable</h3>
           <p>Being intentional about the time and effort it takes—without cutting corners.</p>
         </article>
       </div>
@@ -239,24 +273,28 @@
         <article class="d5-card">
           <div class="d5-card-top"><span class="d5-card-number" aria-hidden="true">01</span><p class="d5-label">Reusable graphics</p></div>
           <h3>Same image. Fresh prayer.</h3>
+          <img class="build-image" src="assets/images/prayer.PNG" alt="A reusable graphic for my morning prayers">
           <p>My morning prayers can have a new message without needing a completely new graphic every morning. The reusable weekday images stay; the prayer goes in the caption.</p>
           <p class="d5-card-note">Keep the community ritual. Stop redesigning the foundation.</p>
         </article>
         <article class="d5-card">
           <div class="d5-card-top"><span class="d5-card-number" aria-hidden="true">02</span><p class="d5-label">Intentional planning</p></div>
           <h3>Make the plan before the post.</h3>
+          <img class="build-image" src="assets/images/maketheplan.png" alt="A content calendar for planning posts">
           <p>Planning the topics, captions, and posting times gives each piece a purpose. I can schedule where possible and keep reminders for posts that still need to go up manually.</p>
           <p class="d5-card-note">A clear plan—not a fresh scramble for every post.</p>
         </article>
         <article class="d5-card">
           <div class="d5-card-top"><span class="d5-card-number" aria-hidden="true">03</span><p class="d5-label">Repurposed ideas</p></div>
           <h3>One idea. More than one format.</h3>
+          <img class="build-image" src="assets/images/oenidea.png" alt="Repurposing content into multiple formats">
           <p>My pinned-post ideas became carousels and video versions. I can adapt the pacing and presentation for each format instead of treating every version as a brand-new project.</p>
           <p class="d5-card-note">Reuse the idea. Give each version the attention it needs.</p>
         </article>
         <article class="d5-card">
           <div class="d5-card-top"><span class="d5-card-number" aria-hidden="true">04</span><p class="d5-label">Creative review</p></div>
           <h3>AI helps. I still decide.</h3>
+          <img class="build-image" src="assets/images/aihelps.png" alt="A workspace for reviewing creative work">
           <p>Being efficient does not mean accepting every output. I still check the words, visuals, likeness, and overall message to make sure the finished work represents me.</p>
           <p class="d5-card-note">Less unnecessary work does not mean less care.</p>
         </article>
@@ -284,55 +322,50 @@
           <p>Consistency is showing up. Efficiency is being intentional about the time and effort it takes to do it.</p>
           <p>And being efficient doesn't mean rushing, cutting corners, or letting AI make every decision. I still have to check the work and make sure it represents me.</p>
           <p><strong>I don't just want to keep posting. I want a process I can keep up with.</strong></p>
-          <p>Less unnecessary work. More intentional follow-through. 💗</p>
+          <p>Less unnecessary work. More intentional follow-through. </p>
         </div>
       </div>
     </section>
 
+    <!-- The finished creation follows the takeaway and precedes the closing statement. -->
+    <section class="d5-section" id="day-five-creation" aria-labelledby="creation-title">
+      <p class="d5-eyebrow">THE DAY FIVE CREATION</p>
+      <h2 class="d5-heading" id="creation-title">Consistency Is Not Efficiency</h2>
+      <p class="d5-description d5-section-intro">I turned my Day Five takeaway into a video about creating a sustainable content process. The goal isn’t just to show up consistently—it’s to work more intentionally.</p>
+      <div class="d5-creation-frame">
+        <!-- Save your finished video at this path; native controls need no extra script. -->
+        <video class="d5-creation-video" controls playsinline preload="metadata" aria-label="Consistency Is Not Efficiency — Day Five video">
+          <source src="assets/images/meetup.mp4" type="video/mp4">
+          Your browser does not support video playback.
+          <a href="assets/images/meetup.mp4">Download the Day Five video.</a>
+        </video>
+      </div>
+      <p class="d5-creation-reflection">This video brings my takeaway to life: reusable systems, intentional planning, and creative decisions that make consistency sustainable.</p>
+    </section>
+
     <blockquote class="d5-closing">
-      <p>Less unnecessary work.<br>More intentional follow-through.</p>
+      <p> The goal isn't to show up exhausted.<br>The goal is to build something I can sustain. </p>
     </blockquote>
   </main>
 
-  <footer class="d5-wrap d5-footer">
-    <div>
-      <p class="d5-footer-name">Jaida Mayrie</p>
-      <p class="d5-footer-tagline">A More Intentional Life</p>
-    </div>
-    <nav class="d5-footer-links" aria-label="Continue the build journal">
-      <a href="day4.html">← Revisit Day Four</a>
-      <a href="index.html">Back to the brand rebuild ↑</a>
-    </nav>
   </footer>
+  <footer class="day-two-footer">
+      <div class="closing-signoff">
+        <p class="brand">
+          <span class="brand-signature">JMay</span>
+          <span class="brand-divider" aria-hidden="true">|</span>
+          <span class="brand-name">JAIDA MAYRIE</span>
+        </p>
+        <p class="tagline">A More Intentional Life</p>
+      <a href="index.html">Back to the brand rebuild ↑</a>
+      <nav class="day-navigation" aria-label="Continue the case study">
 
-  <script>
-    // Progressive enhancement: the full takeaway stays readable without JavaScript.
-    (() => {
-      const tools = document.getElementById('copy-tools');
-      const button = document.getElementById('copy-takeaway');
-      const script = document.getElementById('takeaway-script');
-      const status = document.getElementById('copy-status');
-      if (!tools || !button || !script || !status) return;
-      tools.hidden = false;
-      button.addEventListener('click', async () => {
-        const text = Array.from(script.querySelectorAll('p'), p => p.textContent.trim()).join('\n\n');
-        try {
-          if (!navigator.clipboard || !navigator.clipboard.writeText) throw new Error('Clipboard unavailable');
-          await navigator.clipboard.writeText(text);
-          status.textContent = 'Takeaway copied. Ready to paste.';
-        } catch (_) {
-          // A denied clipboard permission must not prevent access to the text.
-          const selection = window.getSelection();
-          if (selection) {
-            const range = document.createRange();
-            range.selectNodeContents(script);
-            selection.removeAllRanges();
-            selection.addRange(range);
-          }
-          status.textContent = 'Automatic copying is unavailable. The takeaway is selected; use Copy to finish.';
-        }
-      });
-    })();
-  </script>
+        <a href="index.html">DAY ONE</a>
+        <a href="day2.html">DAY TWO</a>
+        <a href="day3.html">DAY THREE</a>
+        <a href="day4.html">DAY FOUR</a>
+        <a href="day5.html" aria-current="page">DAY FIVE</a>
+      </nav>
+    </footer>
 </body>
 </html>
